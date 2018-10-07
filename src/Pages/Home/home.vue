@@ -13,7 +13,7 @@ export default {
   name: 'Home',
   components: {
     HomeHeader,
-    HomeSwiper
+    HomeSwiper,
   }
 }
 </script>
