@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_200x200_0938a8f2.jpg',
-        title: '北京野生动物园',
-        desc: '来北京必去的景点非这些地方莫属'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/59/76e0dc86d4416f913d9d919ec79ffe0e.water.jpg_200x200_4f110511.jpg',
-        title: '香山公园',
-        desc: '深秋时节，红叶漫山遍野，灿烂夺目'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1510/f1/f13797b008eed4d190.img.jpg_200x200_44f2cf08.jpg',
-        title: '呀路古热带植物园',
-        desc: '山顶满眼彩色，此情此景醉了'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
