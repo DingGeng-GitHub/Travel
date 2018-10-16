@@ -3,7 +3,7 @@
     <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
       <div class="iconfont header-abs-back">&#xe624;</div>
     </router-link>
-    <div class="header-fixed" v-show="!showAbs">
+    <div class="header-fixed" v-show="!showAbs" :style="opacityStyle">
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
@@ -17,21 +17,28 @@ export default {
   name: 'DetailHeader',
   data () {
     return {
-      showAbs: true
+      showAbs: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
   },
   methods: {
     handleScroll () {
-      console.log(document.documentElement.scrollTop)
       const top = document.documentElement.scrollTop
       if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = {
+          opacity
+        }
         this.showAbs = false
       } else {
         this.showAbs = true
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   }
 }
@@ -54,9 +61,9 @@ export default {
       font-size .4rem
   .header-fixed
     position : fixed
-    top: 0
-    left: 0
-    right: 0
+    top 0
+    left 0
+    right 0
     height : $headerHeight
     line-height : $headerHeight
     text-align : center
